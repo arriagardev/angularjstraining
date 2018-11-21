@@ -1,0 +1,169 @@
+<h1>{{title}}</h1>
+
+<div class="jumbotron">
+    <h2 class="display-4">Directives</h2>
+    <h3>What is a Directive and what to use for?</h3>
+    <p>&nbsp;</p>
+    <p>Essentially, <strong>a directive is a function which is executed when the AngularJS compiler finds it in the DOM</strong>. 
+        Such function can do almost anything you want to use it for, so the desition depends on what you have to achieve and your design.
+        But, basically you use for encapsulating a proccess which you want keep apart from the main flow or for doing repetitive tasks.</p>
+    <p>There are three types of directives: <strong>framework's native, from third parties and custom</strong>. The convention is that the angular's native directives always use the prefix <i>ng-.</i></p>
+    <p>Every directive has a name (like ng-repeat, tabs, make-up-your-own) and each directive determines where it can be used: element, attribute, class, in a comment.</p>
+    <p>Besides when you use a third party one, <strong>it must to be injected to the controller's function which will use it</strong>.</p>
+
+    <footer class="blockquote-footer">
+    Check out the Angular's Directive documentation
+    <cite title="AngularJs Developer Guide: Directives">
+        <a href="https://docs.angularjs.org/guide/directive" target="_blank">AngularJs Developer Guide: Directives</a>
+    </cite>
+    </footer>
+    <p>&nbsp;</p>
+    <h3>AngularJs Native Directives Examples</h3>
+    <h4>ng-click Directive</h4>
+    <iframe height='265' scrolling='no' title='01.  Example ng-click' src='//codepen.io/dalexmartinez/embed/oQvXWa/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/oQvXWa/'>01.  Example ng-click</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+    <p>&nbsp;</p>
+    <h4>ng-init Directive</h4>
+    <iframe height='265' scrolling='no' title='02. Example ng-init' src='//codepen.io/dalexmartinez/embed/gQYOOr/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/gQYOOr/'>02. Example ng-init</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+    <p>&nbsp;</p>
+    <h4>ng-repeat Directive</h4>
+    <iframe height='265' scrolling='no' title='03. Example ng-repeat' src='//codepen.io/dalexmartinez/embed/xQKKJa/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/xQKKJa/'>03. Example ng-repeat</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+    <p>&nbsp;</p>
+    <h4>ng-change, ng-show, ng-hide &amp; ng-bind Directives</h4>
+    <iframe height='265' scrolling='no' title='04. Example of ng-change, ng-show, ng-hide & ng-bind' src='//codepen.io/dalexmartinez/embed/mQbJxN/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/mQbJxN/'>04. Example of ng-change, ng-show, ng-hide & ng-bind</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+    <p>&nbsp;</p>
+    <h3>Custom Directives Examples</h3>
+    <h4>Basic Custom Directive</h4>
+    <iframe height='265' scrolling='no' title='05. Basic Custom Directive' src='//codepen.io/dalexmartinez/embed/aQOmLr/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/aQOmLr/'>05. Basic Custom Directive</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+    <p>&nbsp;</p>
+    <h4>HTML Directive</h4>
+    <iframe height='265' scrolling='no' title='06. HTML Directive' src='//codepen.io/dalexmartinez/embed/KrdzxL/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/KrdzxL/'>06. HTML Directive</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+    <p>&nbsp;</p>
+    <h4>Directive Exercise</h4>
+    <p>Open the <a href="https://codepen.io/dalexmartinez/pen/GwvJZW" target="_blank">Codepen exercise</a> and follow the instructions embebed in the json <i>$scope.toDosList</i> at the main controller. Have fun! ;)</p>
+    <iframe height='265' scrolling='no' title='07.  Directive Exercise' src='//codepen.io/dalexmartinez/embed/GwvJZW/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/GwvJZW/'>07.  Directive Exercise</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+</div>
+
+<div class="jumbotron">
+    <h2 class="display-4">Services</h2>
+    <h3>What a Service is useful for?</h3>
+    <p>&nbsp;</p>
+    <p>AngularJS services are <strong> singleton objects whose objective is to be reusable independently of the views</strong>. It acts pretty much as a Constructor Function and even can added public methods to it.</p>
+    <p>It holds a reference to an object which will return a response to the control trough the service.</p>
+    <p><strong>There are native AngularJs services</strong>, some of them were used in the previous exercises, such as:
+        <a href="http://www.tutorialsteacher.com/angularjs/angularjs-service-http" target="_blank">$http</a> &amp;
+        <a href="https://docs.angularjs.org/api/ng/service/$" target="_blank">$q</a>,
+        <a href="https://coderwall.com/p/udpmtq/angularjs-use-timeout-not-settimeout" target="_blank">$timeout</a>,
+        <a href="https://www.aspsnippets.com/Articles/AngularJS-interval-example-How-to-Start-Stop-and-Cancel-Destroy-interval-in-AngularJS.aspx" target="_blank">$interval</a>,
+        <a href="https://dzone.com/articles/what-is-a-provider-in-angularjs" target="_blank">$provide</a> ( <i>for 
+        <a href="https://docs.angularjs.org/api/ng/type/angular.Module#provider" target="_blank">advanced AngularJs Modules</i></a>),
+        <a href="https://www.w3schools.com/angular/angular_routing.asp" target="_blank">$route</a>,
+        <a href="https://www.c-sharpcorner.com/UploadFile/ff2f08/understanding-window-service-in-angularjs392/" target="_blank">$location</a>,
+        <a href="http://www.tutorialsteacher.com/angularjs/angularjs-window-service" target="_blank">$window</a>, etc.
+        <strong>They can be recognized because they ussually use the <i>$</i> sign as a prefix</strong>.</p>
+    <p>Some of them are extensions of the Vanilla Javascript methods but using AngularJS services we assure the interaction with the properties, variables and objects of the $scope.</p>
+    <p>There are also custom services and, like the natives, they <strong>must be injected to the main controller.</strong></p>
+
+    <footer class="blockquote-footer">
+    Check out the Angular's Services documentation
+    <cite title="AngularJs Developer Guide: Services">
+        <a href="https://docs.angularjs.org/guide/services" target="_blank">AngularJs Developer Guide: Services</a>
+    </cite> &amp; 
+    AngularJs Services
+    <cite title="www.w3schools.com">
+        <a href="https://www.w3schools.com/angular/angular_services.asp" target="_blank">www.w3schools.com</a>
+    </cite>
+    </footer>
+    <p>&nbsp;</p>
+    <h3>AngularJs Factory Example</h3>
+    <h4>Bitcoin Value Service</h4>
+    <iframe height='265' scrolling='no' title='07. Service' src='//codepen.io/dalexmartinez/embed/MzKaew/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/MzKaew/'>07. Service</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+    <p>&nbsp;</p>
+    <h4>Service Exercise</h4>
+    <p>Open the <a href="https://codepen.io/dalexmartinez/pen/NEaVjg" target="_blank">Codepen exercise</a> and follow the two steps inside the JS file. Take a look to the aditional comments. May the force be with you!</p>
+    <iframe height='265' scrolling='no' title='10. Service Exercise' src='//codepen.io/dalexmartinez/embed/NEaVjg/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/NEaVjg/'>10. Service Exercise</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+    </div>
+
+<div class="jumbotron">
+    <h2 class="display-4">Factories</h2>
+    <h3>What is a Factory and what to use for?</h3>
+    <p>&nbsp;</p>
+    <p>A Factory can give the same capabilities of a service but, as its name tells, working as the <strong>Factory Pattern Design</strong>.</p>
+    <p>It can be used to create almost any things we need in our design, that fact reduces the Factories types to the custom created by our own.</p>
+    <p>The first question we have to do ourselves is what type of object do we need? <strong>We can create complex objects, even such as new Class instances
+        (with .prototype or ES2015 Classes),</strong> functions or even just return a simply string. You can create whatever you like, that’s the rule.</p>
+    <p>As the Directives and Services, the Factories must be injected to the  controller which will use it, so they will be available when are invoked.</p>
+    <p>&nbsp;</p>
+    <footer class="blockquote-footer">
+    Check out the Angular's Factories documentation
+    <cite title="AngularJs Developer Guide: Factories">
+            <a href="https://docs.angularjs.org/guide/factories" target="_blank">AngularJs Developer Guide: Factories</a>
+        </cite>
+    </footer>
+    <p>&nbsp;</p>
+    <h3>AngularJs Factory Example</h3>
+    <h4>Creating Instances from an Object</h4>
+    <iframe height='265' scrolling='no' title='08. Factory' src='//codepen.io/dalexmartinez/embed/KrVvzN/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/KrVvzN/'>08. Factory</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+    <p>&nbsp;</p>
+    <h4>Factory Exercise</h4>
+    <p>Open the <a href="https://codepen.io/dalexmartinez/pen/WYXbdQ" target="_blank">Codepen exercise</a> and follow the two steps inside the JS file. Take a look to the aditional comments. Would you do the Fandango?</p>
+    <iframe height='265' scrolling='no' title='13. Factory Exercise' src='//codepen.io/dalexmartinez/embed/WYXbdQ/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/WYXbdQ/'>13. Factory Exercise</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+</div>
+
+<div class="jumbotron">
+    <h2 class="display-4">Recap</h2>
+    <h3>$scope</h3>
+    <ul class="list-group list-group-flush col-md-12">
+        <li class="list-group-item">The scope is the binding way between the HTML (view) and the JavaScript (controller).</li>
+        <li class="list-group-item">Is an object with the available properties and methods and they are is available for both the view and the controller.</li>
+    </ul>
+    <p>&nbsp;</p>
+    <h3>Controllers</h3>
+    <ul class="list-group list-group-flush col-md-12">
+        <li class="list-group-item">They are defined as a JavaScript object with $scope as argument.</li>
+        <li class="list-group-item">We can have so many controllers as we need, but the scope of any of them is limited to the referenced DOM's element.</li>
+    </ul>
+    <p>&nbsp;</p>
+    <h3>Modules</h3>
+    <ul class="list-group list-group-flush col-md-12">
+        <li class="list-group-item">Helps to name, reference and group services, directives, filters, configuration information and initialization code.</li>
+        <li class="list-group-item">Make possible avoid global variables and control the dependencies injection.</li>
+    </ul>    
+    <p>&nbsp;</p>
+    <h3>Directives</h3>
+    <ul class="list-group list-group-flush col-md-12">
+        <li class="list-group-item">Are responsible for updating the DOM when the state of the model changes.</li>
+        <li class="list-group-item">Extend HTML functionallity.</li>
+        <li class="list-group-item">Angular comes with a built in set of directives (ng-*) which are useful for building web applications, we can create directives of our own too or import them from third parties.</li>
+    </ul>    
+    <p>&nbsp;</p>
+    <h3>Services</h3>
+    <ul class="list-group list-group-flush col-md-12">
+        <li class="list-group-item">Are singletons functions, so there is only one instance of each service you define.</li>
+        <li class="list-group-item">As singletons, they are not affected by scopes and hence can be referenced by multiple views/controllers/directives/other services.</li>
+        <li class="list-group-item"> They are created when two or more things need access to the same data or when you want to encapsulate interactions with, lets say, a web server.</li>
+    </ul>   
+    <p>&nbsp;</p>
+    <h3>Factories</h3>
+    <ul class="list-group list-group-flush col-md-12">
+        <li class="list-group-item">They are function which return a created object on the go.</li>
+        <li class="list-group-item">Their code can be reused for the controller wheir they are nested.</li>
+        <li class="list-group-item">The object created doen't exist until is invoked and as any on object can be updated or removed.</li>
+    </ul> 
+    <p>&nbsp;</p>
+
+    <h4>How do they all are defined?</h4>
+    <iframe height='265' scrolling='no' title='09. Controller, Directive, Factory & Service' src='//codepen.io/dalexmartinez/embed/LXVboe/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/LXVboe/'>09. Controller, Directive, Factory & Service</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+</div>
+
+<div class="jumbotron">
+    <h2 class="display-4">Exercises Solutions</h2>
+    <p>There's no only a right answer, but if you want some clues for the exercises, here they are. Try to make them yourself, so the next instructor won't be dissapointed of you. He's watching... ( ¬ ¬)</p>
+    <p>&nbsp;</p>
+
+    <h4>Directive Exercise Solution</h4>
+    <iframe height='265' scrolling='no' title='08.  Directive Exercise Solution' src='//codepen.io/dalexmartinez/embed/VVzvGB/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/VVzvGB/'>08.  Directive Exercise Solution</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+    <h4>Service Exercise Solution</h4>
+    <iframe height='265' scrolling='no' title='11. Service Exercise Solution' src='//codepen.io/dalexmartinez/embed/NEwKJy/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/NEwKJy/'>11. Service Exercise Solution</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+    <h4>Factory Exercise Solution</h4>
+    <iframe height='265' scrolling='no' title='14. Factory Exercise Solution' src='//codepen.io/dalexmartinez/embed/GwORmy/?height=265&theme-id=light&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/dalexmartinez/pen/GwORmy/'>14. Factory Exercise Solution</a> by dalexmartinez (<a href='https://codepen.io/dalexmartinez'>@dalexmartinez</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+</div>

@@ -1,0 +1,151 @@
+<link rel="stylesheet" href="/styles/day4.css">
+<h1>{{title}} - AngularJS Routing</h1>
+<button type="button" class="btn btn-primary" id='goup'>go up</button>
+<div class="jumbotron">
+  <h2 class="display-4">Core Features</h2>
+  <p>In AngularJS applications, the job of filling page templates with data is transferred from the server to the client. The result is a system better structured for dynamic page updates. Below are its core features:</p>  
+  <ul>
+    <li>Data binding</li>
+    <li>Expressions</li>
+    <li>Interpolation</li>
+    <li>Directives</li>
+    <li><b>Views and Routes</b></li>
+    <li>Filters</li>
+    <li>HTML compiler</li>
+    <li>Forms</li>
+  </ul>  
+</div>
+<div class="jumbotron">  
+  <h2 class="display-4">Navigation???</h2>
+  <p>Routing covers the navigation requirements of a Single Page Application (SPA ). An SPA is a type of web application that load a single HTML page and dynamically update that as the user interacts with the app. SPAs use AJAX and HTML5 to create fluid and responsive Web apps, without constant page reloads.</p>
+  <ul>
+    <li>Single page app: everything happens on one "page", although the URL might change. Most state changes are shown to the user without going to the server (they'll go to the server for data, but not html/js/css etc)</li>
+    <li>Multi page app: these are "round-trip" app that change pages on every get/post/put request. The round trip is the path the application takes from the browser, to the server, to the browser to display every change in state to the user. This usually results in "blinking" as the web browser has to redraw every page.</li>
+  </ul>
+  <div class="text-center">
+    <img class="img-fluid rounded" src="/media/img/concepts-startup.png" alt="Angular JS SPA initialization concepts">
+    <figcaption>Angular JS SPA initialization concepts</figcaption>
+  </div>      
+</div>
+<div class="jumbotron">
+  <h2 class="display-4">Routing</h2>
+  <p>Using templates and some of the other core features, the application can have multiple views by adding routing with one of the modules available.</p>  
+  <h3>$route</h3>
+  <p>The $route service is used for deep-linking URLs to controllers and views (HTML partials). It watches $location.url() and tries to map the path to an existing route definition. </p>
+  <p>Requires the ngRoute module to be installed. You can define routes through $routeProvider's API. The $route service is typically used in conjunction with the ngView directive and the $routeParams service. <b>This is the main AngularJS routing method</b></p>  
+  <h3>UI-Router</h3>
+  <p>Part of the AngularUI suite which is a compilation of tools for supporting AngularJS. A state based routing module for SPA's </p>
+  <p>A client-side router updates the browser URL as the user nagivates through the single page app. Conversely, changes to the browser’s URL can drive navigation of the app, enabling a user to create deep-links (i.e., bookmarks) to areas deep within the application.</p>
+  <p>The simplest form of client-side routing maps a feature in the app to a url. For instance, the Contacts feature might map to the url <code>/contacts</code>, while the Preferences feature might map to the url <code>/prefs</code>. </p>  
+  <p><b>This is the de-facto solution to flexible routing with nested views in AngularJS</b></p>
+</div>
+<div class="jumbotron">
+  <h2 class="display-4">UI-Router Features</h3>
+  <h3>States</h4>
+  <p>UI-Router provides state based routing. Each feature of an application is defined as a state. One state is active at any time, and UI-Router manages the transitions between the states.</p>
+  <p>Each state describes the URL, the UI (a view or views), data prerequisites, and other logical prerequisites (such as authentication) for a feature. Before activating a state, UI-Router first fetches any prerequisites (asynchronously), and then activates the view(s) and updates the URL.</p>
+  <p>UI-Router states are hierarchical; states can be nested inside other states, forming a tree. Child states may inherit data and behavior (such as authentication) from their parent states.</p>
+  <h3>Views</h4>
+  <p>A state defines a feature’s UI (and UI behavior) using a view (or multiple views). A view is a UI component, which is placed into a viewport (<ui-view>) when the state is activated.</p>
+  <p>Views can be nested inside other views. A parent state’s view can create a viewport (<ui-view>), and an nested state can fill that viewport with their own view when activated.</p>
+  <p>Each state can have multiple named views, allowing complex layouts. A named view can target an arbitrary viewport, anywhere in the DOM (even outside the component hierarchy of the parent state). This can be used to fill (or override) named viewports such as footers, or nagivation, when some nested state is active.</p>
+  <h3>URLs</h3>
+  <p>A state can define a URL, but it isn’t required. If a state has defined a URL, the browser’s location is updated to that URL when the state is active.</p>
+  <p>A state’s URL is actually a URL fragment. Each state defines only the fragment (portion) of the URL that it “owns”. That fragment is appended to the parent state’s url in the browser URL when the nested state is active.</p>
+  <h3>Parameters</h3>
+  <p>A state can be parameterized.
+    When a state needs specific data, such as which contact to edit, a parameter such as <code>contactId</code> may be defined. The parameter value can be encoded into the browser URL, e.g., <code>url: 'http://myapp.com/edit/1234'</code> where 1234 is the <code>contactId.</code></p>
+  <p>Parameters can be defined in three locations:</p>
+  <p><code>- **Path**: in the URL's path: `/foo/{fooId}` matches '123' in `http://mysite.com/foo/123`<br>
+  - **Query**: in the URL's query string: `/foo?fooId` matches '123' in `http://mysite.com/foo?fooId=123`<br>
+  - **Non-url**: arbitrary parameter data may be passed programmatically, and not reflect in the URL<br></code></p>
+  <p>A parameter can be required or optional. When a state defines a default parameter value, that parameter is optional. When the parameter value is missing from the URL (for instance), the default parameter value will be used (instead of undefined, or empty string). This can be useful to define defaults such as <code>folderId: 'inbox'</code>.</p>
+  <p>Default parameter values can be “squashed” from the URL. When the current parameter value <b>is the default value</b>, the URL can either contain the default value, or omit it entirely using a “squash” policy. For instance, if the <code>folderId</code> parameter value is the default value of <code>inbox</code>, the URL can either reflect <code>/mail/inbox</code> or simply be <code>/mail</code>.</p>
+  <p>Parameters can be typed. Typed parameters are encoded as strings in the URL, but are converted to a native type when retrieved in javascript code. There are a few built in parameter types: <code>string, int, bool, date, json</code>. In addition, custom parameter types may be defined by the user with any encoding/decoding logic that is required.</p>
+  <h3>Resolve Data</h3>
+  <p>A feature often requires that some data be fetched from a server-side API. Often, that data is represented as an ID in a url parameter.
+    The <code>resolve</code> mechanism allows data retrieval to be a first class participant in the transition. When a state is being entered, its resolve data is fetched. If any of the resolve promises are rejected (perhaps due to a 401, 404, or 500 server response from a REST API), then the transition’s promise is rejected and the error hooks are invoked.
+    This enables robust error handling for applications, and helps to avoid leaving the application in an inconsistent state.</p>
+  <p>Resolve data is declarative. A state defines what data should be fetched (generally by delegating to a service).  
+    A resolve may depend on some other resolve’s result (within the same state, or from any ancestor state).  
+    The resolve process is asynchronous. If a resolve returns a Promise, the transition is suspended until the promise is settled. Because of this, the resolve data participates in the transition lifecycle.
+    Resolve data is made available to the views, as well as transition hooks.</p>
+  <p><b>The resolve system is effectively an asynchronous, hierarchical dependency injection system.</b></p>
+  <h3>Transitions</h3>
+  <p>Navigating between parts of the application occurs by transitioning from one state to another. Transitions between states are transaction-like, i.e., they either completely succeed or completely fail.</p>
+  <ul>
+      <li><strong>Lifecycle</strong>: transitions have a well defined lifecycle
+        <ul>
+          <li><strong>before</strong>: before the asyc portion of a transition has begun</li>
+          <li><strong>start</strong>: the transition has begun</li>
+          <li><strong>exit</strong>: the transition is exiting states</li>
+          <li><strong>retain</strong>: states are retained (a state was active, and is neither being exited nor entered)</li>
+          <li><strong>enter</strong>: the transition is entering states</li>
+          <li><strong>finish</strong>: the transition is finishing</li>
+          <li><strong>success/error</strong>: after the transition is complete</li>
+        </ul>
+      </li>
+      <li><strong>Transition Lifecycle Hooks</strong>:
+        <ul>
+          <li>Hooks may be registered for any stage of the transition lifecycle.</li>
+          <li>Hooks can alter the transition:
+            <ul>
+              <li><strong>pause</strong> the transition, waiting on some promise</li>
+              <li><strong>cancel</strong> the transition</li>
+              <li><strong>redirect</strong> the transition to a new target state</li>
+            </ul>
+          </li>
+          <li><strong>match criteria</strong>:
+            <ul>
+              <li>A hook can choose which transitions it should be applied to.</li>
+              <li><strong>to/from</strong>: only run the hook if the transition is going to or coming from a specific state</li>
+              <li><strong>entering/exiting</strong>: only run the hook if the transition is going to enter or exit a specific state</li>
+            </ul>
+          </li>
+          <li><strong>criteria types</strong>:
+            <ul>
+              <li><strong>state name</strong>: the hook’s match criteria can be state names, such as <code class="highlighter-rouge">banking.account</code></li>
+              <li><strong>glob</strong>: the criteria can be a state glob pattern, such ash <code class="highlighter-rouge">banking.**</code></li>
+              <li><strong>callback</strong>: the criteria can be a callback function, such as <code class="highlighter-rouge">tostate =&gt; tostate.data.requiresAuth == true</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+</div>
+<div class="jumbotron">
+  <h2 class="display-4">Learning by example</h2>
+  <p>This is a 3 parts lesson where a basic hello world routing app will be build from the beginning.</p>
+  <hr>
+  <p><b>First part</b> is to create the main files and structure which will just create a simple page with 2 states.</p>
+  <!-- <iframe height='265' scrolling='no' title='Hello World UI-Router' src='//codepen.io/arriagar/embed/dQWGyx/?height=265&theme-id=0&default-tab=html,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/arriagar/pen/dQWGyx/'>Hello World UI-Router</a> by Humberto (<a href='https://codepen.io/arriagar'>@arriagar</a>) on <a href='https://codepen.io'>CodePen</a>. </iframe>-->
+  <p data-height="265" data-theme-id="0" data-slug-hash="MzrmMX" data-default-tab="js,result" data-user="arriagar" data-pen-title="Hello Galaxy UI-Router" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/arriagar/pen/MzrmMX/">Hello Galaxy UI-Router</a> by Humberto (<a href="https://codepen.io/arriagar">@arriagar</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+  <hr>
+  <p><b>Second part</b> is to implement a list/detail interface, also known as master-detail. To accomplish this, there are two new application states:
+    <ul>
+      <li>The people state will show a list of all the people.</li>      
+      <li>The person state will show details for a specific person.</li>
+    </ul>        
+    Additionally, the views are switched from templates to AngularJS 1.5 components</p>
+  <p>UI-Router features
+    <ul>
+      <li>Route to component</li>
+      <li>Resolve data</li>
+      <li>State Parameters</li>
+      <li>Linking with params</li>
+    </ul>
+  </p>
+  <p data-height="265" data-theme-id="0" data-slug-hash="RqgaEM" data-default-tab="js,result" data-user="arriagar" data-pen-title="Hello Solar System UI-Router" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/arriagar/pen/RqgaEM/">Hello Solar System UI-Router</a> by Humberto (<a href="https://codepen.io/arriagar">@arriagar</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+  <hr>
+  <p><b>Third part</b> finally creates a parent-child state relationship by nesting the person state inside the people state. Their views will also be nested, showing person details inside the people component.</p>
+  <p>Nesting States
+      <ul>
+        <li>State name</li>
+        <li>URL</li>
+        <li>Resolve</li>
+        <li>Views</li>
+        <li>Links</li>
+      </ul>
+    </p>
+    <p data-height="265" data-theme-id="0" data-slug-hash="dQWGyx" data-default-tab="js,result" data-user="arriagar" data-pen-title="Hello World UI-Router" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/arriagar/pen/dQWGyx/">Hello World UI-Router</a> by Humberto (<a href="https://codepen.io/arriagar">@arriagar</a>) on <a href="https://codepen.io">CodePen</a>.</p>    
+</div>

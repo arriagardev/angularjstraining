@@ -1,0 +1,603 @@
+<link rel="stylesheet" href="../styles/day1.css">
+
+<h1>{{title}} - JavaScript</h1>
+
+<!-- JS -->
+<div class="jumbotron">
+  <h2 class="display-4">What is JavaScript?</h2>
+  <blockquote class="blockquote">
+    <p class="mb-0">JavaScript is a multi-paradigm, dynamic language with types and operators,
+        standard built-in objects, and methods. Its syntax is based on the Java and C languages — many structures from those languages apply to JavaScript as well.
+        JavaScript supports object-oriented programming with object prototypes, instead of classes (prototypical inheritance and ES2015 classes).
+        JavaScript also supports functional programming — functions are objects, giving functions the capacity to hold executable code and be passed around like any other object.</p>
+    <footer class="blockquote-footer">
+      From MDN
+      <cite title="Source Title">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript" target="_blank">A re-introduction to JavaScript</a>
+      </cite>
+    </footer>
+  </blockquote>
+  <h2 class="display-4">What can JavaScript do?</h2>
+  <ul>
+    <li>Add new HTML to the page, change the existing content, modify styles.</li>
+    <li>React to user actions, run on mouse clicks, pointer movements, key presses.</li>
+    <li>Send requests over the network to remote servers, download and upload files (AJAX).</li>
+    <li>Get and set cookies, ask questions to the visitor, show messages.</li>
+    <li>Remember the data on the client-side (local storage, indexedDB).</li>
+  </ul>
+  <!-- <hr class="my-4"> -->
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Create your first JS app</h2>
+  <p>From scratch, different ways to load javaScript, chrome console.</p>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Variable types: var, let, const</h2>
+  <h3>var</h3>
+  <p>function scoped, most used in VISTA, "old"</p>
+  <pre>
+    <code>var myVar = 'javascript';</code>
+  </pre>
+  <h3>let</h3>
+  <p>block scoped {}, es6 ("modern javaScript")</p>
+  <pre>
+    <code>let myLet = 123;</code>
+  </pre>
+  <h3>const</h3>
+  <p>same rules as let, except const cannot be assigned another value after declared and must be initialized</p>
+  <pre>
+    <code>const myConst = true;</code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Data types</h2>
+  <p>JavaScript is a dynamically typed language.</p>
+  <p>You don't have to specify data type in the variable.</p>
+  <p>The data type in variables is defined by the value, not the variable itself.</p>
+  <p>string, number, boolean, undefined, null are primitives, everything else is an object.</p>
+  <h3>string</h3>
+  <pre>
+    <code>var variable = 'javascript';</code>
+  </pre>
+  <h3>number</h3>
+  <pre>
+    <code>
+      variable = 40;
+      variable = 1.033;
+      variable = -100;
+    </code>
+  </pre>
+  <h3>boolean</h3>
+  <pre>
+    <code>var variable = false;</code>
+  </pre>
+  <h3>undefined</h3>
+  <pre>
+    <code>var variable = undefined;</code>
+  </pre>
+  <h3>object</h3>
+  <pre>
+    <code>
+      variable = [ 'html5', 'css3', 'js' ];
+      variable = {
+        id: '123',
+        country: 'mexico'
+      };
+      variable = new Date();
+    </code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Strings</h2>
+  <pre>
+    <code>var name = 'John';</code>
+  </pre>
+  <h3>Concatenation</h3>
+  <pre>
+    <code>'Hello ' + name + '!';</code>
+  </pre>
+  <h3>Length</h3>
+  <pre>
+    <code>message.length;</code>
+  </pre>
+  <h3>Uppercase</h3>
+  <pre>
+    <code>name.toUpperCase();</code>
+  </pre>
+  <h3>Lowercase</h3>
+  <pre>
+    <code>name.toLowerCase();</code>
+  </pre>
+  <h3>IndexOf</h3>
+  <pre>
+    <code>message.indexOf( 'wrong' );</code>
+  </pre>
+  <h3>Substring</h3>
+  <pre>
+    <code>str.substring( 6, 11 );</code>
+  </pre>
+  <h3>Split</h3>
+  <pre>
+    <code>str.split( ' ' );</code>
+  </pre>
+  <h3>Replace</h3>
+  <pre>
+    <code>str.replace( 'world', 'John' );</code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Numbers</h2>
+  <pre>
+    <code>var number 1 = 20;</code>
+  </pre>
+  <h3>Basic operations</h3>
+  <pre>
+    <code>
+      number1 + number2;
+      number1 - number2;
+      number1 * number2;
+      number1 / number2;
+      number1 % 2;
+      </code>
+  </pre>
+  <h3>Round</h3>
+  <pre>
+    <code>
+        Math.round( 3.5 );
+        Math.ceil( 3.3 );
+        Math.floor( 3.3 );
+    </code>
+  </pre>
+  <h3>Get min/max from list</h3>
+  <pre>
+    <code>
+        Math.min( 4, 1, 6, 33 );
+        Math.max( 4, 1, 6, 33 );
+    </code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Comparison operators</h2>
+  <h3>Equality operator</h3>
+  <pre>
+    <code>2 == '2';</code>
+  </pre>
+  <h3>Strict comparison operator</h3>
+  <pre>
+    <code>2 === '2';</code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Strings to numbers</h2>
+  <h3>Number</h3>
+  <pre>
+    <code>
+      Number( '20' );
+    </code>
+  </pre>
+  <h3>parseInt/parseFloat</h3>
+  <pre>
+    <code>
+      parseInt( '20' );
+      parseFloat( '20.734' );
+    </code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Numbers to Strings</h2>
+  <h3>toFixed</h3>
+  <pre>
+    <code>
+      num1 = 3119.1020;
+      num1.toFixed(3);
+    </code>
+  </pre>
+  <h3>String</h3>
+  <pre>
+    <code>String( num1 );</code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Arrays</h2>
+  <h3>Creating an array</h3>
+  <pre>
+    <code>var data = [ 'Hello', 20, true, 'world', null ];</code>
+  </pre>
+  <h3>Array length</h3>
+  <pre>
+    <code>var dataLength = data.length;</code>
+  </pre>
+  <h3>Check if it's array</h3>
+  <pre>
+    <code>Array.isArray( data );</code>
+  </pre>
+  <h3>Find in array</h3>
+  <pre>
+    <code>data.indexOf( 'world' );</code>
+  </pre>
+  <h3>Add item at the end</h3>
+  <pre>
+    <code>data.push( 200 );</code>
+  </pre>
+  <h3>Add item at the start</h3>
+  <pre>
+    <code>data.unshift( -200 );</code>
+  </pre>
+  <h3>Add item in the middle</h3>
+  <pre>
+    <code>data.splice( 3, null, 'new element' );</code>
+  </pre>
+  <h3>Remove item from the end</h3>
+  <pre>
+    <code>data.pop();</code>
+  </pre>
+  <h3>Remove item from start</h3>
+  <pre>
+    <code>data.shift();</code>
+  </pre>
+  <h3>Remove item from middle</h3>
+  <pre>
+    <code>data.splice( 3, 1 );</code>
+  </pre>
+  <h3>Reverse</h3>
+  <pre>
+    <code>data.reverse();</code>
+  </pre>
+  <h3>Concatenation</h3>
+  <pre>
+    <code>
+      var arr1 = [ 'a', 'b', 'c' ];
+      var arr2 = [ 'd', 'e' ];
+      var arr3 = arr1.concat( arr2 );
+    </code>
+  </pre>
+  <h3>Sort</h3>
+  <pre>
+    <code>data.sort();</code>
+  </pre>
+  <h3>Looping arrays</h3>
+  <h4>for</h4>
+  <pre>
+    <code>
+      for ( var i = 0; i < fruits.length; i ++ ) {
+        console.log( 'fruit: ' + fruits[ i ] );
+      }
+    </code>
+  </pre>
+  <h4>forEach</h4>
+  <pre>
+    <code>
+      arr3.forEach( function( item, index ) {
+        console.log( 'item: ' + item + ', index: ' + index );
+      } );
+    </code>
+  </pre>
+  <h4>map</h4>
+  <pre>
+    <code>
+      var shoppingCart = [
+        { id: 1, product: 'TV' },
+        { id: 2, product: 'Keyboard' },
+        { id: 3, product: 'Phone' }
+      ];
+      var productNames = shoppingCart.map( function( productName ) {
+        return productName.product;
+      } );
+    </code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">JavaScript Objects/JSON</h2>
+  <p>Objects have properties attached to them, access to them using a dot.</p>
+  <h3>Declaration</h3>
+  <pre>
+    <code>
+      var person = {
+        firstName: 'John',
+        lastName: 'Hank',
+        email: 'john@mail.com'
+      };
+
+      person.firstName;
+    </code>
+  </pre>
+  <h3>Array of objects</h3>
+  <pre>
+    <code>
+      var customers = [
+        { id: 1201, type: 'gold' },
+        { id: 1402, type: 'platinum' },
+        { id: 1109, type: 'gold' }
+      ];
+    </code>
+  </pre>
+  <h3>Looping objects</h3>
+  <pre>
+    <code>
+      for ( var key in person ) {
+        console.log( key + ': ' + person[ key ] );
+      }
+    </code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Functions</h2>
+  <h3>Declaration</h3>
+  <pre>
+    <code>
+      function hello( name ) {
+        var msg = 'hello ' + name;
+        return msg;
+      }
+    </code>
+  </pre>
+  <h3>Calling a function</h3>
+  <pre>
+    <code>var calling = hello( 'John' );</code>
+  </pre>
+  <h3>Function expression</h3>
+  <pre>
+    <code>
+      var sum = function( num1, num2 ) {
+        console.log( 'result: ' +  ( num1 + num2 ) );
+      }
+      sum( 2, 40 );
+    </code>
+  </pre>
+  <h3>Immediately-invoked function expressions (IIFEs)</h3>
+  <pre>
+    <code>
+      ( function( param ) {
+        console.log( 'this is an ' + param );
+      } ) ( 'IIEF' );
+    </code>
+  </pre>
+  <h3>Property methods</h3>
+  <pre>
+    <code>
+      var person = {
+        firstName: 'John',
+        lastName: 'Hank',
+        sayHello: function() {
+          console.log( "Hello, I'm " + this.firstName );
+        }
+      };
+      person.sayHello();
+    </code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Dates</h2>
+  <pre>
+    <code>
+      var today = new Date();
+      var birthday = new Date( 'January 7 1985' );
+      birthday = new Date( '1-7-1985' );
+    </code>
+  </pre>
+  <h3>Methods for Date</h3>
+  <pre>
+    <code>
+      today.getMonth();
+      today.getDate();
+      today.getDay();
+      today.getFullYear();
+      today.getMinutes();
+      today.getHours();
+      today.setFullYear( 2000 );
+    </code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Try, catch, finally</h2>
+  <pre>
+    <code>
+      try {
+        undefinedFunction();
+      } catch ( error ) {
+        console.log( error );
+      } finally {
+        console.log( 'execute always...' );
+      }
+
+      // execute next code
+    </code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Window object</h2>
+  <pre>
+    <code>
+      window.console.log( 'log' );
+      window.alert( 'alert' );
+      window.prompt( 'prompt?' );
+      window.confirm( 'confirm?' );
+      // get width and height of the window
+      window.outerHeight;
+      window.outerWidth;
+      window.innerHeight;
+      window.innerWidth;
+      // location
+      window.location;
+      // redirect
+      window.location.href = 'https://employeeintegration.dieboldnixdorf.com/index.jsp';
+      // get params 
+      window.location.search;
+    </code>
+  </pre>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">DOM ( Document Object Model )</h2>
+  <h3>What is the Document Object Model?</h3>
+  <p class="mb-0">The Document Object Model is a platform- and language-neutral interface that will allow programs and scripts to dynamically access and update the content,
+      structure and style of documents. The document can be further processed and the results of that processing can be incorporated back into the presented page.</p>
+  <blockquote>
+    <footer class="blockquote-footer">
+      From W3
+      <cite title="Source Title">
+        <a href="https://www.w3.org/DOM/" target="_blank">https://www.w3.org/DOM/</a>
+      </cite>
+    </footer>
+  </blockquote>
+  <img src="../img/742px-DOM-model.png" class="img-fluid dom-img" alt="dom">
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Select one element</h2>
+  <div id="card-example" class="card" style="width: 18rem;margin: 0 auto;">
+    <img class="card-img-top" src="../img/742px-DOM-model.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 id="card-example-title" class="card-title">Title</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quaerat, dicta.</p>
+      <a class="btn btn-primary">Button</a>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Select multiple elements</h2>
+  <div class="card" style="width: 18rem;margin: 0 auto;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item list-item">Cras justo deqw</li>
+      <li class="list-group-item list-item">Dapibus ac facilisis in</li>
+      <li class="list-group-item list-item">Vestibulum at eros</li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Creating elements</h2>
+  <div class="btn-group" id="buttons-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary">Button</button>
+    <button type="button" class="btn btn-secondary">Button</button>
+    <button type="button" class="btn btn-secondary">Button</button>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Replacing elements</h2>
+  <div class="btn-group" id="buttons-group-2" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary">Button</button>
+    <button type="button" class="btn btn-secondary">Button</button>
+    <button type="button" class="btn btn-secondary">Button</button>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Remove elements</h2>
+  <div class="btn-group" id="buttons-group-3" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary">Button 1</button>
+    <button type="button" class="btn btn-secondary">Button 2</button>
+    <button type="button" class="btn btn-secondary">Button 3</button>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Classes, attributes</h2>
+  <div class="alert alert-success remove-class" id="alert-example" role="alert" data-attr="123">
+    <h4 class="alert-heading">Title</h4>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quaerat, quibusdam ducimus porro a quam consequatur ullam id neque iusto, labore culpa exercitationem quas aliquam amet autem, facilis possimus. Quis?</p>
+    <hr>
+    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </div>
+</div>
+
+<!-- /////// ad margin top bottom to this section -->
+<div class="jumbotron" id="event-listeners">
+  <h2 class="display-4">Event listeners</h2>
+  <p>Interactions with website by mouse, keyboard, form, etc.</p>
+  <button type="button" class="btn btn-primary">Click me!</button>
+  <h3>Passing event paramater</h3>
+  <button type="button" class="btn btn-success" id="evt-example">Update this button</button>
+  <h3>Mouse events</h3>
+  <button type="button" class="btn btn-warning" id="dblc-example">Double click</button>
+  <button type="button" class="btn btn-info" id="mousentr-example">Mouse enter/Hover</button>
+  <button type="button" class="btn btn-danger" id="mouseup-example">Mouse up (click, hold, release)</button>
+  <button type="button" class="btn btn-dark" id="mousedown-example">Mouse down (click, hold)</button>
+  <h3>Form & Input events</h3>
+  <form action="#" class="form-inline" id="form-search">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="input-search" class="sr-only">Search</label>
+      <input type="text" class="form-control" id="input-search">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Search</button>
+  </form>
+  <h5>Searched: <span id="searched-text"></span></h5>
+  <h5>Event: <span id="event-searched-text"></span></h5>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Event bubbling & delegation</h2>
+  <div class="card card-bubbling" style="width: 18rem;margin: 0 auto;">
+    <img class="card-img-top" src="../img/742px-DOM-model.png" alt="Card image cap">
+    <div class="card-body card-body-bubbling">
+      <h5 class="card-title">Title</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quaerat, dicta.</p>
+      <button type="button" class="btn btn-primary btn-bubbling">Update title</button>
+    </div>
+  </div>
+</div>
+  
+<!-- examples -->
+<div class="jumbotron">
+  <h2 class="display-4">Example1</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group orig-data">
+        <li class="list-group-item list-group-item-dark">Original data</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-primary btn-block" id="btn-map">Map</button>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-group updt-data">
+        <li class="list-group-item list-group-item-dark">Updated Data</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">Example2</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group orig-data2">
+        <li class="list-group-item list-group-item-dark">Original data</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-primary btn-block" id="btn-filter">Filter</button>
+    </div>
+    <div class="col-md-4">
+      <ul class="list-group filt-data">
+        <li class="list-group-item list-group-item-dark">Filtered Data</li>
+      </ul>
+    </div>
+  </div>
+</div>
+  
+
+<!-- 2 excercises in codepen -->
+
+  <!--
+    localstorage
+    protoypes
+    promises
+    ajax, fetch, axios, angularjs - $httprequest?
+  -->

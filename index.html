@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="myApp" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS Training</title>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-route.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+    <!-- Application CSS -->
+    <link rel="stylesheet" href="styles/app.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="#!">Prerequisites</a>
+          <a class="nav-item nav-link" href="#!day1">Day 1</a>
+          <a class="nav-item nav-link" href="#!day2">Day 2</a>
+          <a class="nav-item nav-link" href="#!day3">Day 3</a>
+          <a class="nav-item nav-link" href="#!day4">Day 4</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- content per page will load in this tag -->
+    <div class="container main-content" ng-view></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+    <!-- Application JS -->
+    <script src="scripts/app.js"></script>
+    <!-- below scripts are for each page, add code ONLY inside the controller -->
+    <script src="scripts/pre.js"></script>
+    <script src="scripts/day1.js"></script>
+    <script src="scripts/day2.js"></script>
+    <script src="scripts/day3.js"></script>
+    <script src="scripts/day4.js"></script>
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>    
+
+  </body>
+
+</html>

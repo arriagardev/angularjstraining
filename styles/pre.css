@@ -1,0 +1,7 @@
+.jumbotron > .list-group-flush > .list-group-item:first-child {
+  border-top: none;
+}
+
+.jumbotron > .list-group-flush > .list-group-item:last-child {
+  border-bottom: none;
+}
